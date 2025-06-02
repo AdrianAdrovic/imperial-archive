@@ -16,9 +16,9 @@ public class Province {
     public String status; // e.g., Loyal, Rebellious
     public String era; // e.g., 3E 427
 
-    @OneToMany(mappedBy = "province")
+    @OneToMany(mappedBy = "province", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Settlement> settlements;
 
-    @OneToMany(mappedBy = "province")
+    @OneToMany(mappedBy = "province", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<ImperialEdict> edicts;
 }

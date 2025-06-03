@@ -21,4 +21,8 @@ public class Settlement {
 
     @ManyToMany(mappedBy = "affectedSettlements")
     public List<ImperialEdict> edicts;
+
+    @ManyToMany(mappedBy = "settlements")
+    public List<ImperialCelebration> celebrations;
+
 }

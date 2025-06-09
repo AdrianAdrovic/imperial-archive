@@ -13,12 +13,15 @@ public class Province {
     public String name;
     public String capital_city;
     public String governor_name;
-    public String status; // e.g., Loyal, Rebellious
-    public String era; // e.g., 3E 427
+    public String status;
+    public String era;
 
     @OneToMany(mappedBy = "province", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Settlement> settlements;
 
     @OneToMany(mappedBy = "province", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<ImperialEdict> edicts;
+
+    // New field for file upload
+    public String file_path;
 }

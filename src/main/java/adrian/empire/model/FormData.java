@@ -1,18 +1,16 @@
 package adrian.empire.model;
 
-import jakarta.ws.rs.FormParam;
-import jakarta.ws.rs.core.MediaType;
 import org.jboss.resteasy.reactive.PartType;
-
+import jakarta.ws.rs.FormParam;
 import java.io.File;
 
 public class FormData {
 
-    @FormParam("fileName")
-    @PartType(MediaType.TEXT_PLAIN)
-    public String fileName;
-
     @FormParam("file")
-    @PartType(MediaType.APPLICATION_OCTET_STREAM)
+    @PartType("application/octet-stream")
     public File file;
+
+    @FormParam("filename")
+    @PartType("text/plain")
+    public String fileName;
 }
